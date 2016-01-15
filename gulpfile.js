@@ -44,6 +44,10 @@ gulp.task('iconfont', ['clean'], function() {
                 .pipe(consolidate('lodash', options))
                 .pipe(gulp.dest('dist/'));
 
+            // .htaccess文件 解决跨域问题
+            gulp.src('templates/.htaccess')
+                .pipe(gulp.dest('dist/'));
+
             // demo样式，实际项目中不需要
             gulp.src('templates/demo.css')
                 .pipe(gulp.dest('dist/css/'));
